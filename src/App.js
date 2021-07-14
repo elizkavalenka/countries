@@ -111,7 +111,7 @@ export default function App(pagination, filters, sorter, extra) {
   const { data, loading, error } = useQuery(LIST_COUNTRIES, { client });
 
   if (loading || error) {
-    return <p>{error ? error.message : "Loading..."}</p>;
+    return <p>{error ? error.message : <div class="async-spinner"></div>}</p>;
   }
 
   return (
